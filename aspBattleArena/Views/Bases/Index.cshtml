@@ -1,0 +1,49 @@
+@model IEnumerable<aspBattleArena.Models.Base>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bases</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create">Stwórz now¹ baze</a>
+    </p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)/ Nazwa bazy
+            <th>
+                Adres
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Organization)/ Organizacja
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Organization.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BaseID">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.BaseID">Poka¿ detale</a> |
+                <a asp-action="Delete" asp-route-id="@item.BaseID">Usuñ</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

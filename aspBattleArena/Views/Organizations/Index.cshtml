@@ -1,0 +1,51 @@
+@model IEnumerable<aspBattleArena.Models.Organization>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Organizacje</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create">Stwórz now¹ organizacjê</a>
+    </p>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)/ Nazwa organizacji
+            </th>
+            <th>
+                Kraj pochodzenia
+            </th>
+            <th>
+                Szef
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryOfOrigin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfBoss)
+            </td>
+            
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OgranizationId">Edytuj</a> |
+                <a asp-action="Details" asp-route-id="@item.OgranizationId">Detale</a> |
+                <a asp-action="Delete" asp-route-id="@item.OgranizationId">Usuñ</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

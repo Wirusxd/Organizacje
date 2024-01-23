@@ -1,0 +1,50 @@
+@model aspBattleArena.Models.Boss
+
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detale</h1>
+
+<div>
+    <h4>Szefowie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Imiê
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+           Nazwisko
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+        <dt class="col-sm-2">
+            Organizacja
+            @* @Html.DisplayNameFor(model=>model.Organization) *@
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OrganizationName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.BossId">Edytuj</a> |
+    <a asp-action="Index">Wróæ do listy</a>
+</div>

@@ -1,0 +1,44 @@
+@model aspBattleArena.Models.Organization
+
+@{
+    ViewData["Title"] = "Edytuj";
+}
+
+<h1>Edytuj</h1>
+
+<h4>Organizacje</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OgranizationId" />
+            <div class="form-group" style="margin-bottom:1em">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom:1em">
+                <label asp-for="CountryOfOrigin" class="control-label"></label>
+                <input asp-for="CountryOfOrigin" class="form-control" />
+                <span asp-validation-for="CountryOfOrigin" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom:1em">
+                <label asp-for="Boss" class="control-label"></label>
+                <input asp-for="Boss.BossId" class="form-control" />
+            </div>
+            
+            <div class="form-group" style="margin-bottom:1em">
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Wróæ do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

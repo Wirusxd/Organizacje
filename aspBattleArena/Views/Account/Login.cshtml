@@ -1,0 +1,25 @@
+@{  
+    ViewData["Title"] = "Panel logowania";  
+}  
+  
+<div class="container">  
+    <div class="row">          
+        <div class="col-md-3">  
+            <h2><strong>Login </strong></h2><br />  
+            <form asp-action="login" method="post">  
+                <div class="form-group" style="margin-bottom:1em">  
+                    <label>Nazwa u¿ytkownika</label>  
+                    <input type="text" class="form-control" id="userName" name="userName" placeholder="Wpisz nazwê u¿ytkownika">  
+                </div>  
+                <div class="form-group" style="margin-bottom:1em">  
+                    <label>Has³o</label>  
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Has³o">  
+                </div>  
+                <div class="form-check" style="margin-bottom:1em">  
+                    <button class="btn btn-info" type="reset">Wyczyœæ</button>  
+                    <button type="submit" class="btn btn-primary">Zaloguj</button>  
+                </div>  
+            </form>  
+        </div>  
+    </div>  
+</div>

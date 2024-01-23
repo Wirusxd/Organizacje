@@ -1,0 +1,45 @@
+@model aspBattleArena.Models.Boss
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuñ</h1>
+
+<h3>Jesteœ pewny ¿e chcesz to usun¹æ?</h3>
+<div>
+    <h4>Szefowie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)/ Imiê
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)/ Nazwisko
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)/ Wiek
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nationality)/ Narodowoœæ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="BossId" />
+        <input type="submit" value="Usuñ" class="btn btn-danger" /> |
+        <a asp-action="Index">Wróæ do listy</a>
+    </form>
+</div>

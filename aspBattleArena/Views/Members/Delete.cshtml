@@ -1,0 +1,63 @@
+@model aspBattleArena.Models.GangMember
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuñ</h1>
+
+<h3>Jesteœ pweny ¿e chcesz to usun¹æ?</h3>
+<div>
+    <h4>Cz³onek gangu</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nationality) / Narodowoœæ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Strength)/ Si³a
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Strength)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Endurance)/ Wytrzyma³oœæ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Endurance)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Intelligence)/ Inteligencja
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Intelligence)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Luck)/ Szczêœcie
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Luck)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="MemberId" />
+        <input type="submit" value="Usuñ" class="btn btn-danger" /> |
+        <a asp-action="Index">Wróæ do listy</a>
+    </form>
+</div>

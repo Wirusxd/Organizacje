@@ -1,0 +1,42 @@
+@model aspBattleArena.Views.ViewModels.OrganizationViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Stwórz</h1>
+
+<h4>Organizacje</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="margin-bottom:1em">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom:1em">
+                <label asp-for="CountryOfOrigin" class="control-label"></label>
+                <input asp-for="CountryOfOrigin" class="form-control" />
+                <span asp-validation-for="CountryOfOrigin" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom:1em">
+                <label asp-for="BossID" class="control-label"></label>
+                <input asp-for="BossID" class="form-control" />
+            </div>
+            <div class="form-group" style="margin-bottom:1em">
+                <input type="submit" value="Stwórz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Wróæ do listy</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
